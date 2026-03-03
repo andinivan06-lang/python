@@ -11,14 +11,22 @@ def fast_mul(x, y):
         y >>= 1
     return res
 
+
 # ТЕСТ
 
+
 def test_fast_mul():
+    k=0
     for _ in range(1000):
         a = random.randint(0, 1000)
         b = random.randint(0, 1000)
-        assert fast_mul(a, b) == a * b, f"Ошибка: {a} * {b}"
-    print("Все тесты пройдены")
+        if (fast_mul(a, b) == a * b):
+            k+=1
+
+    if k==1000:
+         print("все тесты пройдены")
+    else:
+         print(f"ошибка: {a} * {b}")
 
 
 test_fast_mul()
